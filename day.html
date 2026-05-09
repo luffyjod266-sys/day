@@ -1,0 +1,33 @@
+<script>
+
+function cutCake(){
+
+  const cake = document.getElementById("cake");
+  const message = document.getElementById("message");
+
+  // Cake animation
+  cake.classList.add("cut");
+
+  // Birthday message
+  message.innerHTML =
+    "🎉 Happy Birthday Jennie 💖";
+
+  // Extra fireworks burst
+  for(let i = 0; i < 5; i++){
+
+    setTimeout(() => {
+
+      const x = Math.random() * window.innerWidth;
+      const y = Math.random() * window.innerHeight / 2;
+
+      createFirework(x, y);
+
+    }, i * 300);
+
+  }
+
+  // Disable button after cutting
+  document.querySelector(".cut-btn").disabled = true;
+}
+
+</script>
